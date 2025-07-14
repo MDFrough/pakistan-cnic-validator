@@ -1,6 +1,27 @@
 {
   "name": "@mdfrough/cnic-validator",
   "version": "0.0.1",
+  "description": "An Angular library to validate and format Pakistani CNIC numbers with masking and pipe support.",
+  "author": "Mohammad Dursham",
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "cnic",
+    "cnic-validator",
+    "pakistan",
+    "angular-library",
+    "angular-directive",
+    "angular-pipe",
+    "cnic-mask"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MDFrough/pakistan-cnic-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MDFrough/pakistan-cnic-validator.git/issues"
+  },
+  "homepage": "https://github.com/MDFrough/pakistan-cnic-validator.git#readme",
   "peerDependencies": {
     "@angular/common": "^20.1.0",
     "@angular/core": "^20.1.0"
@@ -8,5 +29,17 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./cnic-validator.d.ts",
+      "esm2022": "./esm2022/cnic-validator.mjs",
+      "default": "./fesm2022/cnic-validator.mjs"
+    }
+  },
+  "module": "fesm2022/cnic-validator.mjs",
+  "typings": "cnic-validator.d.ts"
 }
