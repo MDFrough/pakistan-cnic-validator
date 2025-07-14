@@ -1,0 +1,13 @@
+<form [formGroup]="form">
+  <input formControlName="cnic" cnicValidator cnicMask />
+  <div *ngIf="form.get('cnic')?.errors?.['invalidCnic'] && form.get('cnic')?.touched">
+    Invalid CNIC format
+  </div>
+
+  <p>Formatted CNIC: {{ form.get('cnic')?.value | cnic }}</p>
+</form>
+
+<div>
+  <input type="text" [(ngModel)]="cnic" cnicMask cnicValidator />
+  <p>Formatted CNIC: {{ cnic | cnic }}</p>
+</div>
