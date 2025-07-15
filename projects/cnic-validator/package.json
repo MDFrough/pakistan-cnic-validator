@@ -1,6 +1,6 @@
 {
   "name": "@mdfrough/cnic-validator",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "An Angular library to validate and format Pakistani CNIC numbers with masking and pipe support.",
   "author": "Mohammad Dursham",
   "license": "MIT",
