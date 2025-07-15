@@ -1,13 +1,24 @@
-<form [formGroup]="form">
-  <input formControlName="cnic" cnicValidator cnicMask />
-  <div *ngIf="form.get('cnic')?.errors?.['invalidCnic'] && form.get('cnic')?.touched">
-    Invalid CNIC format
+<div class="container">
+  <div class="card">
+    <h2>&#64;mdfrough/cnic-validator</h2>
+    <form [formGroup]="form" class="form">
+      <h3>Reactive Form</h3>
+      <input formControlName="cnic" cnicValidator cnicMask />
+      <div *ngIf="form.get('cnic')?.errors?.['invalidCnic'] && form.get('cnic')?.touched">
+        Invalid CNIC format
+      </div>
+
+      <p>CNIC Pipe: {{ form.get('cnic')?.value | cnic }}</p>
+    </form>
+
+
+    <div class="form">
+      <h3>Template Driven Form</h3>
+      <input type="text" [(ngModel)]="cnic" cnicMask cnicValidator #cnicField="ngModel" required />
+      <div *ngIf="cnicField.touched && cnicField.errors?.['invalidCnic']">
+        Invalid CNIC format
+      </div>
+      <p>CNIC Pipe: {{ cnic | cnic }}</p>
+    </div>
   </div>
-
-  <p>Formatted CNIC: {{ form.get('cnic')?.value | cnic }}</p>
-</form>
-
-<div>
-  <input type="text" [(ngModel)]="cnic" cnicMask cnicValidator />
-  <p>Formatted CNIC: {{ cnic | cnic }}</p>
 </div>
