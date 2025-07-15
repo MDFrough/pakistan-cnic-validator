@@ -84,17 +84,21 @@ this.form = this.fb.group({
   cnicMask 
   cnicValidator 
   #cnicModel="ngModel" />
-<div *ngIf="cnicModel.errors?.['invalidCnic']">
-  Invalid CNIC format
-</div>
+  @if(cnicModel.errors?.['invalidCnic']) {
+    <div>
+      Invalid CNIC format
+    </div>
+  }
 ```
 
 ### 4. Display Validation Error (Reactive)
 
 ```html
-<div *ngIf="form.get('cnic')?.errors?.['invalidCnic']">
-  Invalid CNIC format
-</div>
+@if(form.get('cnic')?.errors?.['invalidCnic']) {
+  <div>
+    Invalid CNIC formats
+  </div>
+}
 ```
 
 ### 5. Pipe Usage
